@@ -1,0 +1,9 @@
+{% load static %}
+<div>
+    <a href="{% url 'users:profile' %}">My Profile</a>
+    <a href="{% url 'users:change_password' %}">Change password</a>
+    <a href="{% url 'users:logout' %}">Logout</a>
+    <a href="{% url 'library:books' %}">Books</a>
+    <a href="{% url 'library:authors' %}">Authors</a>
+</div>
+{% block content %}{% endblock %}

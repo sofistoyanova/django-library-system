@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'library/navbar.html' %}
+    {% block content %}
+
+    <h1>Books List</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    {% for book in books%}
+    <p>
+        <a href="{% url 'library:book_details' pk=book.pk %}">{{ book }}</a>
+        <a href="{% url 'library:loan_book' pk=book.pk %}">loan</a>
+    </p>
+    {% endfor %}
+
+    {% endblock content %}
+</body>
+</html>

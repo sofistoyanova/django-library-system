@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'library/navbar.html' %}
+    {% block content %}
+
+    <h1>book details</h1>
+    <p>Title: {{ book }}</p>
+    <p>Summary: {{ book.summary }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Author: {{ book.author }}</p>
+
+    {% endblock content %}
+</body>
+</html>

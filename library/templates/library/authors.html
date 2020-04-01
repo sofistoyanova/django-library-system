@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   {% extends 'library/navbar.html' %}
+    {% block content %}
+
+    <h1>all authors</h1>
+    {% for author in authors %}
+    <p>{{ author }}</p>
+    {% endfor %}
+
+    {% endblock content %}
+</body>
+</html>

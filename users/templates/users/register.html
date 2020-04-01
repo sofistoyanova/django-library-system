@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register form</title>
+</head>
+<body>
+    <form action="{% url 'users:register' %}" method="POST">
+        {% csrf_token %}
+        {{ message }} <br>
+        <input required type="text" name="username" placeholder="username">
+        <br>
+        <input required type="email" name="email" placeholder="email">
+        <br>
+        <input required type="text" name="password" placeholder="passowrd">
+        <br>
+        <input required type="text" name="confirm__password" placeholder="confirm passowrd">
+        <br>
+        <label for="is_staff">are you staff member</label>
+        <input type="checkbox" name="is_staff">
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    <a href="{% url 'users:login' %}">Login here</a>
+</body>
+</html>

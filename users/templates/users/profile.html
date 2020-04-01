@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user profile</title>
+</head>
+<body>
+    {% extends 'library/navbar.html' %}
+    {% block content %}
+
+    <h1>library user profile</h1>
+    <p></p>
+    <p>Book on Loan:</p>
+    {% for book in books %}
+        {% if book.is_past_due %}
+            <div>
+                <span style="color:red;">{{ book }}</span>
+                <span> || Due date: {{ book.due_date }} ||</span>
+                <a href="{% url 'library:return_book' pk=book.pk %}">return</a>
+            </div>
+        {% else %}
+            <div>
+                <span>{{ book }}</span>
+                <span>|| Due date: {{ book.due_date }} ||</span>
+                <a href="{% url 'library:return_book' pk=book.pk %}">return</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div>
+        <h2>Do you want to delete your profile?</h2>
+        <a href="{% url 'users:delete_profile' %}">DELETE PROFILE</a>
+    </div>
+
+    {% endblock content %}
+</body>
+</html>

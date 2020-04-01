@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>staff profile</h1>
+    {% for book in books %}
+        {% if book.is_past_due %}
+            <p>{{ book }}</p>
+            <button>send email</button>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
